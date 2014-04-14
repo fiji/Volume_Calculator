@@ -79,6 +79,11 @@
 		</developer>
 	</developers>
 
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://jenkins.imagej.net/job/Volume_Calculator/</url>
+	</ciManagement>
+
 	<scm>
 		<connection>scm:git:git://github.com/fiji/Volume_Calculator</connection>
 		<developerConnection>scm:git:git@github.com:fiji/Volume_Calculator</developerConnection>
