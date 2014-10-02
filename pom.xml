@@ -21,10 +21,6 @@
 	<dependencies>
 		<dependency>
 			<groupId>sc.fiji</groupId>
-			<artifactId>fiji-lib</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>sc.fiji</groupId>
 			<artifactId>AnalyzeSkeleton_</artifactId>
 		</dependency>
 		<dependency>
