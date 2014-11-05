@@ -24,15 +24,10 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
  */
-import skeleton_analysis.AnalyzeSkeleton_;
 import Skeletonize3D_.Skeletonize3D_;
-import skeleton_analysis.Edge;
-import skeleton_analysis.Graph;
-import skeleton_analysis.Point;
-import skeleton_analysis.SkeletonResult;
-import skeleton_analysis.Vertex;
 import ij.ImagePlus;
 import ij.process.ImageProcessor;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -41,6 +36,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
+
 import javax.media.j3d.Appearance;
 import javax.media.j3d.BranchGroup;
 import javax.media.j3d.ColoringAttributes;
@@ -52,6 +48,13 @@ import javax.media.j3d.PointAttributes;
 import javax.media.j3d.Shape3D;
 import javax.vecmath.Color3f;
 import javax.vecmath.Point3f;
+
+import skeleton_analysis.AnalyzeSkeleton_;
+import skeleton_analysis.Edge;
+import skeleton_analysis.Graph;
+import skeleton_analysis.Point;
+import skeleton_analysis.SkeletonResult;
+import skeleton_analysis.Vertex;
 
 /**
  * <p>

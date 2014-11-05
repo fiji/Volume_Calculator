@@ -35,6 +35,7 @@ import ij3d.Content;
 import ij3d.Image3DUniverse;
 import ij3d.behaviors.InteractiveBehavior;
 import ij3d.behaviors.InteractiveViewPlatformTransformer;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -47,6 +48,7 @@ import java.util.ListIterator;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
+
 import javax.media.j3d.Appearance;
 import javax.media.j3d.ColoringAttributes;
 import javax.media.j3d.Group;
@@ -58,6 +60,7 @@ import javax.media.j3d.Shape3D;
 import javax.vecmath.Color3f;
 import javax.vecmath.Point3d;
 import javax.vecmath.Point3i;
+
 import skeleton_analysis.Edge;
 import skeleton_analysis.Graph;
 import skeleton_analysis.Point;

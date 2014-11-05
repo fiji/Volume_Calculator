@@ -33,9 +33,10 @@ import ij.plugin.filter.PlugInFilter;
 import ij.process.ImageProcessor;
 import ij3d.Content;
 import ij3d.Image3DUniverse;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
-import javax.media.j3d.Transform3D;
+
 import javax.vecmath.Color3f;
 import javax.vecmath.Vector3d;
 

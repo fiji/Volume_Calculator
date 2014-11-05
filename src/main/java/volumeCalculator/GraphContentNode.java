@@ -25,6 +25,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
  */
 import ij3d.ContentNode;
+
 import javax.media.j3d.View;
 import javax.vecmath.Color3f;
 import javax.vecmath.Point3f;
