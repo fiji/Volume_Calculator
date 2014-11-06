@@ -18,6 +18,41 @@
 	<name>plugins/Volume_Calculator.jar</name>
 	<description>The Volume Calculator plugin is designed to let users measure the volumes of arbitrary segments of blood vessels by selecting them directly from a 3D image. Although Volume Calculator was developed for quantification in a mouse hindlimb ischemia experiment, it should be useful for the volume measurement of any network. This possibility is determined by the following requirement: the plugin is configured to work best with images that can be read and analyzed by the Skeleton 3D and Analyze 3D plugins. Hence, it is suggested that users first check their images with these two plugins.</description>
 
+	<developers>
+		<developer>
+			<id>pcmarks</id>
+			<name>Peter C Marks</name>
+			<email>marksp@mmc.org</email>
+			<url>https://github.com/pcmarks</url>
+			<organization>Maine Medical Center Research Institute</organization>
+			<organizationUrl>home/webHome_content.php/</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>-5</timezone>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/fiji/Volume_Calculator</connection>
+		<developerConnection>scm:git:git@github.com:fiji/Volume_Calculator</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/fiji/Volume_Calculator</url>
+	</scm>
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://jenkins.imagej.net/job/Volume_Calculator/</url>
+	</ciManagement>
+
+	<repositories>
+		<!-- NB: for project parent -->
+		<repository>
+			<id>imagej.public</id>
+			<url>http://maven.imagej.net/content/groups/public</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<!-- Fiji dependencies -->
 		<dependency>
@@ -55,42 +90,6 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-
-	<developers>
-		<developer>
-			<id>pcmarks</id>
-			<name>Peter C Marks</name>
-			<email>marksp@mmc.org</email>
-			<url>https://github.com/pcmarks</url>
-			<organization>Maine Medical Center Research Institute</organization>
-			<organizationUrl>home/webHome_content.php/</organizationUrl>
-			<roles>
-				<role>architect</role>
-				<role>developer</role>
-			</roles>
-			<timezone>-5</timezone>
-		</developer>
-	</developers>
-
-	<ciManagement>
-		<system>Jenkins</system>
-		<url>http://jenkins.imagej.net/job/Volume_Calculator/</url>
-	</ciManagement>
-
-	<scm>
-		<connection>scm:git:git://github.com/fiji/Volume_Calculator</connection>
-		<developerConnection>scm:git:git@github.com:fiji/Volume_Calculator</developerConnection>
-		<tag>HEAD</tag>
-		<url>https://github.com/fiji/Volume_Calculator</url>
-	</scm>
-
-	<repositories>
-		<!-- NB: for project parent -->
-		<repository>
-			<id>imagej.public</id>
-			<url>http://maven.imagej.net/content/groups/public</url>
-		</repository>
-	</repositories>
 
 	<build>
 		<plugins>
