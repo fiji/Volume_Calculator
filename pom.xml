@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>sc.fiji</groupId>
 		<artifactId>pom-fiji</artifactId>
-		<version>2.0.0-SNAPSHOT</version>
+		<version>5.0</version>
 		<relativePath />
 	</parent>
 
@@ -19,6 +19,11 @@
 	<description>The Volume Calculator plugin is designed to let users measure the volumes of arbitrary segments of blood vessels by selecting them directly from a 3D image. Although Volume Calculator was developed for quantification in a mouse hindlimb ischemia experiment, it should be useful for the volume measurement of any network. This possibility is determined by the following requirement: the plugin is configured to work best with images that can be read and analyzed by the Skeleton 3D and Analyze 3D plugins. Hence, it is suggested that users first check their images with these two plugins.</description>
 
 	<dependencies>
+		<!-- Fiji dependencies -->
+		<dependency>
+			<groupId>sc.fiji</groupId>
+			<artifactId>3D_Viewer</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>sc.fiji</groupId>
 			<artifactId>AnalyzeSkeleton_</artifactId>
@@ -27,10 +32,13 @@
 			<groupId>sc.fiji</groupId>
 			<artifactId>Skeletonize3D_</artifactId>
 		</dependency>
+
+		<!-- ImageJ dependencies -->
 		<dependency>
-			<groupId>sc.fiji</groupId>
-			<artifactId>3D_Viewer</artifactId>
+			<groupId>net.imagej</groupId>
+			<artifactId>ij</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>java3d</groupId>
 			<artifactId>j3d-core</artifactId>
@@ -45,10 +53,6 @@
 			<groupId>java3d</groupId>
 			<artifactId>vecmath</artifactId>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>net.imagej</groupId>
-			<artifactId>ij</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -87,5 +91,27 @@
 			<url>http://maven.imagej.net/content/groups/public</url>
 		</repository>
 	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<configuration>
+					<rules>
+						<banDuplicateClasses>
+							<dependencies>
+								<dependency>
+									<artifactId>VIB-lib</artifactId>
+									<ignoreClasses>
+										<ignoreClass>javax/media/j3d/*</ignoreClass>
+									</ignoreClasses>
+								</dependency>
+							</dependencies>
+						</banDuplicateClasses>
+					</rules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
