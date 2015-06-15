@@ -81,7 +81,9 @@ public class Volume_Calculator implements PlugInFilter {
         if (null != imagePlus) {
             this.originalImage = (new Duplicator()).run(imagePlus);
         }
-        return DOES_8G + STACK_REQUIRED;           // Gotta have a Stack!
+        // NB: This plugin runs Skeletonize3D_ which accepts 8-bit images only.
+        // And we gotta have a stack!
+        return DOES_8G + STACK_REQUIRED;
     }
 
     /**
