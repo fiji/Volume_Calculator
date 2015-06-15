@@ -81,7 +81,7 @@ public class Volume_Calculator implements PlugInFilter {
         if (null != imagePlus) {
             this.originalImage = (new Duplicator()).run(imagePlus);
         }
-        return DOES_ALL + STACK_REQUIRED;           // Gotta have a Stack!
+        return DOES_8G + STACK_REQUIRED;           // Gotta have a Stack!
     }
 
     /**
