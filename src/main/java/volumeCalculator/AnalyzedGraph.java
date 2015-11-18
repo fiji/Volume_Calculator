@@ -37,17 +37,17 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
-import javax.media.j3d.Appearance;
-import javax.media.j3d.BranchGroup;
-import javax.media.j3d.ColoringAttributes;
-import javax.media.j3d.Group;
-import javax.media.j3d.LineArray;
-import javax.media.j3d.LineAttributes;
-import javax.media.j3d.Node;
-import javax.media.j3d.PointAttributes;
-import javax.media.j3d.Shape3D;
-import javax.vecmath.Color3f;
-import javax.vecmath.Point3f;
+import org.scijava.java3d.Appearance;
+import org.scijava.java3d.BranchGroup;
+import org.scijava.java3d.ColoringAttributes;
+import org.scijava.java3d.Group;
+import org.scijava.java3d.LineArray;
+import org.scijava.java3d.LineAttributes;
+import org.scijava.java3d.Node;
+import org.scijava.java3d.PointAttributes;
+import org.scijava.java3d.Shape3D;
+import org.scijava.vecmath.Color3f;
+import org.scijava.vecmath.Point3f;
 
 import sc.fiji.analyzeSkeleton.AnalyzeSkeleton_;
 import sc.fiji.analyzeSkeleton.Edge;

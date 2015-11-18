@@ -37,8 +37,8 @@ import ij3d.Image3DUniverse;
 import java.awt.BorderLayout;
 import java.awt.Color;
 
-import javax.vecmath.Color3f;
-import javax.vecmath.Vector3d;
+import org.scijava.vecmath.Color3f;
+import org.scijava.vecmath.Vector3d;
 
 /**
  * <p>This is the Volume_Calculator ImageJ/Fiji plugin. It is a plugin that is

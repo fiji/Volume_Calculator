@@ -24,9 +24,9 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
  */
-import com.sun.j3d.utils.picking.PickCanvas;
-import com.sun.j3d.utils.picking.PickResult;
-import com.sun.j3d.utils.picking.PickTool;
+import org.scijava.java3d.utils.picking.PickCanvas;
+import org.scijava.java3d.utils.picking.PickResult;
+import org.scijava.java3d.utils.picking.PickTool;
 
 import ij.IJ;
 import ij.ImagePlus;
@@ -49,17 +49,17 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import javax.media.j3d.Appearance;
-import javax.media.j3d.ColoringAttributes;
-import javax.media.j3d.Group;
-import javax.media.j3d.LineArray;
-import javax.media.j3d.Node;
-import javax.media.j3d.PickSegment;
-import javax.media.j3d.SceneGraphPath;
-import javax.media.j3d.Shape3D;
-import javax.vecmath.Color3f;
-import javax.vecmath.Point3d;
-import javax.vecmath.Point3i;
+import org.scijava.java3d.Appearance;
+import org.scijava.java3d.ColoringAttributes;
+import org.scijava.java3d.Group;
+import org.scijava.java3d.LineArray;
+import org.scijava.java3d.Node;
+import org.scijava.java3d.PickSegment;
+import org.scijava.java3d.SceneGraphPath;
+import org.scijava.java3d.Shape3D;
+import org.scijava.vecmath.Color3f;
+import org.scijava.vecmath.Point3d;
+import org.scijava.vecmath.Point3i;
 
 import sc.fiji.analyzeSkeleton.Edge;
 import sc.fiji.analyzeSkeleton.Graph;

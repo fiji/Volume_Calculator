@@ -30,7 +30,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.vecmath.Color3f;
+import org.scijava.vecmath.Color3f;
 
 
 /**
