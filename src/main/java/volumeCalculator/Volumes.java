@@ -64,7 +64,6 @@ public class Volumes {
         this.volumeMultiplier = calibration.pixelDepth *
                                 calibration.pixelHeight *
                                 calibration.pixelWidth;
-//        System.out.println("VOLUME MULT: "+this.volumeMultiplier);
     }
 
     /**
@@ -75,8 +74,8 @@ public class Volumes {
      * @return
      */
     public boolean addVolumeColor(Color chosenColor) {
-        volumes.add(new Double(0));
-        voxelCounts.add(new Integer(0));
+        volumes.add(0.0);
+        voxelCounts.add(0);
         Color3f newColor = new Color3f(chosenColor);
         for (Color3f color : colors) {
             if (newColor.equals(color)) return false;   // Already used
@@ -102,7 +101,6 @@ public class Volumes {
         if (colorIndex == UserData.INITIAL_COLOR_INDEX) return;
         int voxelCount = voxelCounts.get(colorIndex) + count;
         voxelCounts.set(colorIndex, voxelCount);
-        Double volume = volumes.get(colorIndex);
         volumes.set(colorIndex, voxelCount * volumeMultiplier);
     }
 

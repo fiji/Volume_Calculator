@@ -73,34 +73,23 @@ public class GraphContentNode extends ContentNode {
     }
 
     @Override
-    public void channelsUpdated(boolean[] blns) {
-        ;
-    }
+    public void channelsUpdated(boolean[] blns) {}
 
     @Override
-    public void thresholdUpdated(int i) {
-        ;
-    }
+    public void thresholdUpdated(int i) {}
 
     @Override
-    public void colorUpdated(Color3f clrf) {
-        ;
-    }
+    public void colorUpdated(Color3f clrf) {}
 
     @Override
-    public void transparencyUpdated(float f) {
-        ;
-    }
+    public void transparencyUpdated(float f) {}
+
 
     @Override
-    public void shadeUpdated(boolean bln) {
-        ;
-    }
+    public void shadeUpdated(boolean bln) {}
 
     @Override
-    public void eyePtChanged(View view) {
-        ;
-    }
+    public void eyePtChanged(View view) {}
 
     @Override
     public void lutUpdated(int[] ints, int[] ints1, int[] ints2, int[] ints3) {

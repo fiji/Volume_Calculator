@@ -293,7 +293,6 @@ public class CustomVolumeBehavior2 extends InteractiveBehavior {
                 super.doProcess(e);
             }
         }
-        return;
     }
 
     /**
@@ -309,10 +308,10 @@ public class CustomVolumeBehavior2 extends InteractiveBehavior {
             switch (code) {
                 case KeyEvent.VK_UP:
                     viewTransformer.zoomTo(.9);
-                    return;
+                    break;
                 case KeyEvent.VK_DOWN:
                     viewTransformer.zoomTo(1.1);
-                    return;
+                    break;
             }
         } else {
             super.doProcess(ke);
@@ -381,12 +380,10 @@ public class CustomVolumeBehavior2 extends InteractiveBehavior {
     public int computeAllEdgesVolume() {
 
         int voxelCount = 0;
-        int edgeCount = 0;
         for (Edge edge : edgeBlobs.keySet()) {
             voxelCount += reconstructEdge(edge);
-            edgeCount++;
         }
-//        System.out.println("Total voxelCount = "+voxelCount+" edgeCount = "+edgeCount);
+
         return voxelCount;
     }
 
@@ -482,26 +479,14 @@ public class CustomVolumeBehavior2 extends InteractiveBehavior {
         Blob slabBlob;
         nSliceBlobs = new ArrayList(Collections.nCopies(imageDepth, null));
         forest = graph.getSkeletonResult().getGraph();
-//        System.out.println("Trees in the forest: "+forest.length);
-        int treecount = 0;
+
         for (Graph tree : forest) {
             // Skip those trees with no (zero) edges
             if (tree.getEdges().size() < 1) {
-//                if (tree.getVertices().size() > 0) {
-//                    for (Vertex v : tree.getVertices()) {
-//                        for (Point p : v.getPoints()) {
-//                            Blob pBlob = getBlobAtPoint(p, false);  // Called for the side effect
-//                        }
-//                    }
-//                }
                 continue;   // Skip this tree
             }
-            treecount++;
-//            System.out.println("T#: "+treecount+" Edges: "+tree.getEdges().size());
-            int edgecount = 0;
             for (Edge edge : tree.getEdges()) {
                 if (edge.getType() == -1) continue;
-//                System.out.println("     E#: "+(++edgecount));
                 for (Point v1Point : edge.getV1().getPoints()) {
                     v1Blob = getBlobAtPoint(v1Point, false);
                     if (v1Blob != null) {
@@ -526,7 +511,6 @@ public class CustomVolumeBehavior2 extends InteractiveBehavior {
                 }
             }
         }
-//        System.out.println("Trees used: "+treecount);
     }
 
 
@@ -685,15 +669,7 @@ public class CustomVolumeBehavior2 extends InteractiveBehavior {
             voxelCountD += size / blob.edges.size();
             voxelCount += blob.points.size() / blob.edges.size();
         }
-        int v = 0;
 
-//        for (List<Blob> bList : nSliceBlobs) {
-//            if (null != bList) {
-//                for (Blob blob : bList) {
-//                    v += blob.points.size();
-//                }
-//            }
-//        }
         grandVoxelCount += voxelCount;
         grandVoxelCountD += voxelCountD;
 
