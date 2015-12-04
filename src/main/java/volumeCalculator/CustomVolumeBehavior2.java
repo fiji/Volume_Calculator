@@ -61,9 +61,9 @@ import javax.vecmath.Color3f;
 import javax.vecmath.Point3d;
 import javax.vecmath.Point3i;
 
-import skeleton_analysis.Edge;
-import skeleton_analysis.Graph;
-import skeleton_analysis.Point;
+import sc.fiji.analyzeSkeleton.Edge;
+import sc.fiji.analyzeSkeleton.Graph;
+import sc.fiji.analyzeSkeleton.Point;
 
 /**
  * <p>
