@@ -49,12 +49,7 @@ import javax.media.j3d.Shape3D;
 import javax.vecmath.Color3f;
 import javax.vecmath.Point3f;
 
-import skeleton_analysis.AnalyzeSkeleton_;
-import skeleton_analysis.Edge;
-import skeleton_analysis.Graph;
-import skeleton_analysis.Point;
-import skeleton_analysis.SkeletonResult;
-import skeleton_analysis.Vertex;
+import sc.fiji.analyzeSkeleton.*;
 
 /**
  * <p>
@@ -74,8 +69,6 @@ class AnalyzedGraph {
      * A set of static values that one can play around with.
      */
     private static float   INITIAL_SCALE = 1.5f;
-    private static Color3f EDGE_POINT_COLOR = new Color3f(Color.yellow);
-    private static Color3f TREE_POINT_COLOR = new Color3f(Color.MAGENTA);
     private static float   TREE_POINT_THICKNESS = 1.0f;
     private static final Color   EDGE_COLOR = Color.white;
     private static Color3f EDGE_COLOR_3f = new Color3f(EDGE_COLOR);
@@ -121,7 +114,6 @@ class AnalyzedGraph {
     }
     private float width;
     private float height;
-    private float depth;
 
     /**
      * Constructor
@@ -134,8 +126,6 @@ class AnalyzedGraph {
      * Initialize this instance with a ImageJ ImagePlus. The image is
      * skeletonized and analyzed. The analysis structure - a tree - is used to create
      * a Java 3D scene tree (BranchGroup).
-     *
-     * @param String filename
      */
     void init(ImagePlus imagePlus) {
 
@@ -143,7 +133,6 @@ class AnalyzedGraph {
         // are used to scale the image appropriately. See point2point3f()
         width = imagePlus.getWidth();
         height = imagePlus.getHeight();
-        depth = imagePlus.getStackSize();
 
         skeletonizer = new Skeletonize3D_();
         skeletonizer.setup("none", imagePlus);
@@ -180,7 +169,6 @@ class AnalyzedGraph {
         sceneGraph = new GraphContentNode();
         // Do this so that the sceneGraph can return SceneGraphPaths
         sceneGraph.setCapability(BranchGroup.ENABLE_PICK_REPORTING);
-        int graphCount = 0;
 
         // Traverse all the edges in all the trees.
         // The following algorithm is based on a similar algorithm that
@@ -195,9 +183,6 @@ class AnalyzedGraph {
 //            if (tree.getVertices().size() < 1) {
 //                continue;
 //            }
-            graphCount++;
-            int vcount = 0;
-            int ecount = 0;
             // Create empty stacks
             Stack<Vertex> stack = new Stack<Vertex>();
             Stack<Group> groupStack = new Stack<Group>(); // Java 3D Groups
@@ -242,7 +227,6 @@ class AnalyzedGraph {
                     }
                     // mark as visited
                     vertex.setVisited(true, visitOrder++);
-                    vcount++;
 
                     ArrayList<Edge> previousEdges = new ArrayList<Edge>();
 
@@ -271,7 +255,6 @@ class AnalyzedGraph {
                         if (edge.getType() != Edge.BACK) {
                             Vertex oppVertex = edge.getOppositeVertex(vertex);
                             if (!oppVertex.isVisited()) {
-                                ecount++;
 
                                 Vertex v1 = edge.getV1();
                                 Vertex v2 = edge.getV2();
@@ -292,10 +275,6 @@ class AnalyzedGraph {
                                     la.setCoordinate((2*edgePoint)+2, point2point3f(point));
                                 }
                                 la.setCoordinate(numberOfPoints-1, point2point3f(v2.getPoints().get(0)));
-
-//                                LineArray la = new LineArray(2, LineArray.COORDINATES);
-//                                la.setCoordinate(0, point2point3f(v1.getPoints().get(0)));
-//                                la.setCoordinate(1, point2point3f(v2.getPoints().get(0)));
 //++
                                 la.setCapability(LineArray.ALLOW_COLOR_READ);
                                 la.setCapability(LineArray.ALLOW_COLOR_WRITE);
@@ -343,17 +322,13 @@ class AnalyzedGraph {
      * A little function that translates an analysis point to
      * an AWT point.
      *
-     * @param Point - Analysis point
-     * @return Point3f - AWT point
+     * @param   point - Analysis point
+     * @return  Point3f - AWT point
      */
     private Point3f point2point3f(Point point) {
         float x, y, z;
-//        x = (point.x - (width / 2.0f)) / width;
-//        y = (point.y - (height / 2.0f)) / height;
-//        z = (point.z - (depth / 2.0f)) / depth;
         x = (point.x) / width;
         y = (point.y) / height;
-//        z = (point.z) / depth;
         z = (point.z) / height;
         Point3f point3f = new Point3f(x, y, z);
         point3f.scale(INITIAL_SCALE);

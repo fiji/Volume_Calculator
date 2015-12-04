@@ -58,12 +58,6 @@ import javax.vecmath.Vector3d;
  * @author Peter C Marks - Maine Medical Center Research Institute (MMCRI.org)
  */
 public class Volume_Calculator implements PlugInFilter {
-
-    public static final Vector3d INITIAL_SCALING = new Vector3d(.05d,.05d,.05d);
-    public static final float   TRANSPARENCY = 0.4f;
-    public static final Color3f TRANSPARENCY_COLOR = new Color3f(Color.gray);
-
-
     private AnalyzedGraph vasculature;
     private Image3DUniverse universe;
     private ImagePlus imagePlus;
@@ -119,20 +113,6 @@ public class Volume_Calculator implements PlugInFilter {
         Calibration calibration = imagePlus.getCalibration();
 
 
-//        Content subjectContent = universe.addContent(originalImage, Content.VOLUME);
-////        Content subjectContent = universe.addContent(originalImage, Content.SURFACE);
-//
-//        Transform3D t3d = new Transform3D();
-//        t3d.setScale(INITIAL_SCALING);
-//        subjectContent.applyTransform(t3d);
-//        subjectContent.setColor(TRANSPARENCY_COLOR);
-//        subjectContent.setTransparency(TRANSPARENCY);       // Higher = more transparent
-//
-//        universe.centerSelected(content);
-//        universe.centerSelected(subjectContent);
-//        content.setLocked(true);
-//        subjectContent.setLocked(true);
-
         // Create the volumes data structure. Its gui is: VolumesPanel
         // VolumePanel is placed to the SOUTH of what's in 3D Viewer
         Volumes volumes = new Volumes(calibration);
@@ -142,7 +122,6 @@ public class Volume_Calculator implements PlugInFilter {
         // the selected volumes.
         universe.setInteractiveBehavior(
                 new CustomVolumeBehavior2(universe, content, volumes, volumesPanel, imagePlus, originalImage));
-//        universe.addContent(content);
         // Make sure that the bounding box is not displayed upon selection; user
         // can reset this.
         universe.setShowBoundingBoxUponSelection(false);

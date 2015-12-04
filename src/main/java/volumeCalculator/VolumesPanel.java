@@ -88,7 +88,7 @@ public class VolumesPanel extends java.awt.Panel {
 
         volumeLabels = new ArrayList<Label>();
 
-        checkboxGroup = new CheckboxGroup(); // Used for radio buttom behavior
+        checkboxGroup = new CheckboxGroup(); // Used for radio button behavior
 
         constraints = new GridBagConstraints();
         Label Fill = new Label("");
