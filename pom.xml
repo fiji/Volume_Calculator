@@ -37,6 +37,10 @@
 		<tag>HEAD</tag>
 		<url>https://github.com/fiji/Volume_Calculator</url>
 	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/fiji/Volume_Calculator/issues</url>
+	</issueManagement>
 	<ciManagement>
 		<system>Jenkins</system>
 		<url>http://jenkins.imagej.net/job/Volume_Calculator/</url>
