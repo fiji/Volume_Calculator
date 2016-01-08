@@ -18,19 +18,48 @@
 
 	<developers>
 		<developer>
-			<id>pcmarks</id>
-			<name>Peter C Marks</name>
-			<email>marksp@mmc.org</email>
-			<url>https://github.com/pcmarks</url>
-			<organization>Maine Medical Center Research Institute</organization>
-			<organizationUrl>home/webHome_content.php/</organizationUrl>
+			<id>ctrueden</id>
+			<name>Curtis Rueden</name>
+			<email>ctrueden@wisc.edu</email>
+			<url>http://loci.wisc.edu/people/curtis-rueden</url>
+			<organization>UW-Madison LOCI</organization>
+			<organizationUrl>http://loci.wisc.edu/</organizationUrl>
 			<roles>
-				<role>architect</role>
-				<role>developer</role>
+				<role>maintainer</role>
 			</roles>
-			<timezone>-5</timezone>
+			<timezone>-6</timezone>
+		</developer>
+		<developer>
+			<id>hinerm</id>
+			<name>Mark Hiner</name>
+			<email>hiner@wisc.edu</email>
+			<url>http://loci.wisc.edu/people/mark-hiner</url>
+			<organization>UW-Madison LOCI</organization>
+			<organizationUrl>http://loci.wisc.edu/</organizationUrl>
+			<roles>
+				<role>maintainer</role>
+			</roles>
+			<timezone>-6</timezone>
 		</developer>
 	</developers>
+	<contributors>
+		<contributor>
+			<name>Peter C. Marks</name>
+			<url>http://imagej.net/User:Pmarks</url>
+			<roles><role>founder</role></roles>
+			<properties><id>pcmarks</id></properties>
+		</contributor>
+		<contributor>
+			<name>Johannes Schindelin</name>
+			<url>http://imagej.net/User:Schindelin</url>
+			<properties><id>dscho</id></properties>
+		</contributor>
+		<contributor>
+			<name>Jan Eglinger</name>
+			<url>http://imagej.net/User:Eglinger</url>
+			<properties><id>imagejan</id></properties>
+		</contributor>
+	</contributors>
 
 	<scm>
 		<connection>scm:git:git://github.com/fiji/Volume_Calculator</connection>
