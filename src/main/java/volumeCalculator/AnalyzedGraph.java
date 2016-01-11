@@ -24,7 +24,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
  */
-import Skeletonize3D_.Skeletonize3D_;
+import sc.fiji.skeletonize3D.Skeletonize3D_;
 import ij.ImagePlus;
 import ij.process.ImageProcessor;
 
