@@ -79,7 +79,7 @@ import sc.fiji.analyzeSkeleton.Point;
  * the volume. If there is no path, the user is warned and nothing is done.
  * </p>
  * <p>For an explanation of how the voxels are counted, please see the
- * <pre>reconstructEdge</pre> method comments.
+ * {@link reconstructEdge} method comments.
  * </p>
  * <p>
  * The InteractiveBehavior of the 3D Viewer is extended so as to catch these
