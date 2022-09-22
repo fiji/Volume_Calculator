@@ -11,7 +11,7 @@
 
 	<groupId>sc.fiji</groupId>
 	<artifactId>Volume_Calculator</artifactId>
-	<version>2.0.3-SNAPSHOT</version>
+	<version>2.0.3</version>
 
 	<name>Volume Calculator</name>
 	<description>The Volume Calculator plugin is designed to let users measure the volumes of arbitrary segments of blood vessels by selecting them directly from a 3D image. Although Volume Calculator was developed for quantification in a mouse hindlimb ischemia experiment, it should be useful for the volume measurement of any network. This possibility is determined by the following requirement: the plugin is configured to work best with images that can be read and analyzed by the Skeleton 3D and Analyze 3D plugins. Hence, it is suggested that users first check their images with these two plugins.</description>
@@ -73,7 +73,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/fiji/Volume_Calculator</connection>
 		<developerConnection>scm:git:git@github.com:fiji/Volume_Calculator</developerConnection>
-		<tag>HEAD</tag>
+		<tag>Volume_Calculator-2.0.3</tag>
 		<url>https://github.com/fiji/Volume_Calculator</url>
 	</scm>
 	<issueManagement>
