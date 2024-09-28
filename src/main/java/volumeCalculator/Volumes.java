@@ -51,7 +51,8 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.scijava.vecmath.Color3f;
+import ij3d.Utils;
+import org.jogamp.vecmath.Color3f;
 
 
 /**
@@ -98,11 +99,11 @@ public class Volumes {
     public boolean addVolumeColor(Color chosenColor) {
         volumes.add(new Double(0));
         voxelCounts.add(new Integer(0));
-        Color3f newColor = new Color3f(chosenColor);
+        Color3f newColor = Utils.toColor3f(chosenColor);
         for (Color3f color : colors) {
             if (newColor.equals(color)) return false;   // Already used
         }
-        colors.add(new Color3f(chosenColor));
+        colors.add(Utils.toColor3f(chosenColor));
         currentColorIndex = volumes.size()-1;
         return true;
     }

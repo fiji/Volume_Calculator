@@ -45,6 +45,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
  */
+import ij3d.Utils;
 import sc.fiji.skeletonize3D.Skeletonize3D_;
 import ij.ImagePlus;
 import ij.process.ImageProcessor;
@@ -54,21 +55,22 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
-import org.scijava.java3d.Appearance;
-import org.scijava.java3d.BranchGroup;
-import org.scijava.java3d.ColoringAttributes;
-import org.scijava.java3d.Group;
-import org.scijava.java3d.LineArray;
-import org.scijava.java3d.LineAttributes;
-import org.scijava.java3d.Node;
-import org.scijava.java3d.PointAttributes;
-import org.scijava.java3d.Shape3D;
-import org.scijava.vecmath.Color3f;
-import org.scijava.vecmath.Point3f;
+import org.jogamp.java3d.Appearance;
+import org.jogamp.java3d.BranchGroup;
+import org.jogamp.java3d.ColoringAttributes;
+import org.jogamp.java3d.Group;
+import org.jogamp.java3d.LineArray;
+import org.jogamp.java3d.LineAttributes;
+import org.jogamp.java3d.Node;
+import org.jogamp.java3d.PointAttributes;
+import org.jogamp.java3d.Shape3D;
+import org.jogamp.vecmath.Color3f;
+import org.jogamp.vecmath.Point3f;
 
 import sc.fiji.analyzeSkeleton.AnalyzeSkeleton_;
 import sc.fiji.analyzeSkeleton.Edge;
@@ -95,11 +97,11 @@ class AnalyzedGraph {
      * A set of static values that one can play around with.
      */
     private static float   INITIAL_SCALE = 1.5f;
-    private static Color3f EDGE_POINT_COLOR = new Color3f(Color.yellow);
-    private static Color3f TREE_POINT_COLOR = new Color3f(Color.MAGENTA);
+    private static Color3f EDGE_POINT_COLOR = Utils.toColor3f(Color.yellow);
+    private static Color3f TREE_POINT_COLOR = Utils.toColor3f(Color.MAGENTA);
     private static float   TREE_POINT_THICKNESS = 1.0f;
     private static final Color   EDGE_COLOR = Color.white;
-    private static Color3f EDGE_COLOR_3f = new Color3f(EDGE_COLOR);
+    private static Color3f EDGE_COLOR_3f = Utils.toColor3f(EDGE_COLOR);
     private static float   EDGE_THICKNESS = 2.0f;
     private static float   VERTEX_THICKNESS = 2.0f;
     private static String  STATUS_BEGIN_CREATE_GRAPHIC = "Begin creating 3D graphic.";
@@ -156,7 +158,7 @@ class AnalyzedGraph {
      * skeletonized and analyzed. The analysis structure - a tree - is used to create
      * a Java 3D scene tree (BranchGroup).
      *
-     * @param String filename
+     * @param imagePlus The image with which to initialize this instance.
      */
     void init(ImagePlus imagePlus) {
 
@@ -364,7 +366,7 @@ class AnalyzedGraph {
      * A little function that translates an analysis point to
      * an AWT point.
      *
-     * @param Point - Analysis point
+     * @param point - Analysis point
      * @return Point3f - AWT point
      */
     private Point3f point2point3f(Point point) {
@@ -383,10 +385,10 @@ class AnalyzedGraph {
 
     void resetColorAtGroup(Group startGroup, Color3f edgeColor) {
         Color3f currentColor = new Color3f();
-        Color3f resetColor = new Color3f(EDGE_COLOR);
-        Enumeration children = startGroup.getAllChildren();
-        while (children.hasMoreElements()) {
-            Node node = (Node) children.nextElement();
+        Color3f resetColor = Utils.toColor3f(EDGE_COLOR);
+        Iterator<Node> children = startGroup.getAllChildren();
+        while (children.hasNext()) {
+            Node node = children.next();
             if (node instanceof Shape3D) {
                 Shape3D shape = (Shape3D) node;
                 if (shape.getGeometry() instanceof LineArray) {

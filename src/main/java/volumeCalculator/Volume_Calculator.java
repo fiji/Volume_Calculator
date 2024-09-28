@@ -58,8 +58,9 @@ import ij3d.Image3DUniverse;
 import java.awt.BorderLayout;
 import java.awt.Color;
 
-import org.scijava.vecmath.Color3f;
-import org.scijava.vecmath.Vector3d;
+import ij3d.Utils;
+import org.jogamp.vecmath.Color3f;
+import org.jogamp.vecmath.Vector3d;
 
 /**
  * <p>This is the Volume_Calculator ImageJ/Fiji plugin. It is a plugin that is
@@ -82,7 +83,7 @@ public class Volume_Calculator implements PlugInFilter {
 
     public static final Vector3d INITIAL_SCALING = new Vector3d(.05d,.05d,.05d);
     public static final float   TRANSPARENCY = 0.4f;
-    public static final Color3f TRANSPARENCY_COLOR = new Color3f(Color.gray);
+    public static final Color3f TRANSPARENCY_COLOR = Utils.toColor3f(Color.gray);
 
 
     private AnalyzedGraph vasculature;
